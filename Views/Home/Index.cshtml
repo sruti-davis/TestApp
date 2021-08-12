@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "List certificate details";
+}
+
+    <div class="jumbotron">
+
+        <h3>List certificate details</h3>
+        <br />
+        <fieldset>
+            @using (Ajax.BeginForm("ListCertificateDetails", "Home",
+                                    new AjaxOptions { UpdateTargetId = "divCertificateDetails" }))
+            {
+
+                <div>
+                    @Html.Label("Certificate Serial Number:")
+                    @Html.TextBox("serialNumValue", "", new { style="width:280px" })
+                </div>
+                <br />
+                <button>Submit</button>
+
+                <div id="divCertificateDetails"></div>
+            }
+        </fieldset>
+
+    </div>
+
